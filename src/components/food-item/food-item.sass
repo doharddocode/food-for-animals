@@ -1,0 +1,105 @@
+.food-item-wrapper
+  flex: 1 1 calc((100% / 3))
+  max-width: 320px
+  transition: all .1s linear
+  *
+    transition: all .15s linear
+  &:hover
+    transform: scale(1.01)
+    cursor: pointer
+    span[role="link"]
+      border-bottom-color: transparent
+      color: #2ea8e6
+    .food-item, .label
+      background-color: #2ea8e6
+  &:not(.disabled)
+    &.selected
+      .food-item, .label
+        background-color: #D91667
+      &:hover
+        .food-item, .label
+          background-color: #E52E7A
+  &.disabled
+    cursor: not-allowed
+    color: #b3b3b3
+    &:hover
+      transform: scale(1)
+    .food-item, .label
+      background-color: #b3b3b3
+    .food-item__description, .food-item__full-info
+      color: #b3b3b3
+    .food-item__caption
+      color: #FFFF66
+    .food-item__inner
+      background: url("images/dest/food-item__bg-disabled.png") bottom left no-repeat #F2F2F2
+
+.food-item
+  min-height: 510px
+  position: relative
+  margin-bottom: 15px
+
+  font-family: 'Trebuchet MS', sans-serif
+  font-style: normal
+  background: #1698D9
+  clip-path: polygon(12% 0, 100% 0, 100% 50%, 100% 100%, 0 100%, 0 12%)
+  border-radius: 0 12px 12px 12px
+.food-item__inner
+  padding: 20px 16px 16px 45px
+  position: absolute
+  top: 4px
+  left: 4px
+  bottom: 4px
+  right: 4px
+
+  background: url("images/dest/food-item__bg.png") bottom left no-repeat #F2F2F2
+  clip-path: polygon(12% 0, 100% 0, 100% 50%, 100% 100%, 0 100%, 0 12%)
+  border-radius: 0 12px 12px 12px
+.food-item__top-info
+  margin-bottom: 10px
+
+  font-style: normal
+  font-weight: 400
+  font-size: 16px
+  line-height: 19px
+.food-item__title
+  margin: 0
+  padding: 0
+
+  font-weight: 700
+  font-size: 48px
+  line-height: 56px
+.food-item__description
+  margin-bottom: 15px
+
+  font-weight: 700
+  font-size: 24px
+  line-height: 28px
+
+  color: #000000
+.food-item__full-info
+  font-size: 14px
+  line-height: 16px
+  color: #666666
+
+.food-item__caption
+  font-family: 'Trebuchet MS', sans-serif
+  font-weight: 400
+  font-size: 13px
+  line-height: 15px
+  text-align: center
+  color: #FFFFFF
+  span[role="link"]
+    color: #1698d9
+    border-bottom: 1px dashed #1698d9
+    text-decoration: none
+    &:hover
+      border-bottom: transparent
+
+@media (max-width: 992px)
+  .food-item-wrapper
+    flex-basis: calc(100% / 2)
+
+@media (max-width: 480px)
+  .food-item-wrapper
+    max-width: 100%
+    flex-basis: 100%
